@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Seller First Homebuyers — People First, Property Second</title>
+<meta name="description" content="A local, family-run home buying company. We help homeowners facing auction, foreclosure, or a hard sale understand every option available to them — no pressure, no obligation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --mist:#EDF1EE;
+    --paper:#F7F9F7;
+    --harbor:#1E2B28;
+    --harbor-soft:#41524D;
+    --wheat:#C89B4A;
+    --wheat-dark:#8C6A2E;
+    --grove:#4B6355;
+    --grove-dark:#324438;
+    --ember:#A8543C;
+    --ember-dark:#7A3B29;
+    --line: rgba(30,43,40,0.12);
+    --serif: 'Source Serif 4', Georgia, serif;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --mono: 'IBM Plex Mono', monospace;
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  html{scroll-behavior:smooth;}
+  body{
+    font-family: var(--sans);
+    color: var(--harbor);
+    background: var(--mist);
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+  .wrap{max-width:760px; margin:0 auto; padding:0 24px;}
+  a{color:inherit;}
+
+  /* ---- Header ---- */
+  header{padding:28px 0 0;}
+  .brand{
+    display:flex; align-items:baseline; justify-content:space-between; gap:16px;
+    padding-bottom:20px; border-bottom:1px solid var(--line);
+    flex-wrap:wrap;
+  }
+  .brand-name{font-family:var(--serif); font-weight:600; font-size:20px; letter-spacing:0.01em;}
+  .brand-tag{font-family:var(--mono); font-size:12px; letter-spacing:0.06em; text-transform:uppercase; color:var(--harbor-soft);}
+
+  /* ---- Hero ---- */
+  .hero{padding:64px 0 40px;}
+  .eyebrow{
+    font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase;
+    color:var(--grove-dark); margin-bottom:18px; display:flex; align-items:center; gap:10px;
+  }
+  .eyebrow::before{content:''; width:20px; height:1px; background:var(--grove);}
+  h1{
+    font-family:var(--serif); font-weight:600; font-size:clamp(32px,5vw,44px);
+    line-height:1.15; max-width:14ch; margin-bottom:22px; letter-spacing:-0.01em;
+  }
+  .hero-sub{font-size:17px; color:var(--harbor-soft); max-width:46ch; margin-bottom:32px;}
+  .cta-row{display:flex; gap:14px; flex-wrap:wrap;}
+  .btn{
+    display:inline-flex; align-items:center; gap:8px;
+    font-family:var(--sans); font-weight:500; font-size:15px;
+    padding:13px 22px; border-radius:2px; text-decoration:none;
+    border:1px solid transparent; transition:transform 0.15s ease;
+  }
+  .btn:hover{transform:translateY(-1px);}
+  .btn-primary{background:var(--harbor); color:var(--paper);}
+  .btn-secondary{border-color:var(--harbor); color:var(--harbor);}
+
+  /* ---- Timeline signature ---- */
+  .timeline{margin:56px 0 0; padding-top:36px; border-top:1px solid var(--line);}
+  .timeline-label{font-family:var(--mono); font-size:12px; color:var(--harbor-soft); margin-bottom:14px; letter-spacing:0.04em;}
+  .timeline-track{position:relative; height:2px; background:var(--line); margin:0 4px;}
+  .timeline-fill{position:absolute; left:0; top:0; height:2px; background:var(--ember); width:22%;}
+  .timeline-points{display:flex; justify-content:space-between; margin-top:10px;}
+  .timeline-points span{font-family:var(--mono); font-size:11px; color:var(--harbor-soft);}
+  .timeline-points span:first-child{color:var(--ember-dark); font-weight:500;}
+
+  /* ---- Section shared ---- */
+  section{padding:56px 0;}
+  .section-head{margin-bottom:32px;}
+  .section-eyebrow{font-family:var(--mono); font-size:12px; letter-spacing:0.08em; text-transform:uppercase; color:var(--grove-dark); margin-bottom:10px;}
+  h2{font-family:var(--serif); font-weight:600; font-size:28px; letter-spacing:-0.01em;}
+  .lede{font-size:16px; color:var(--harbor-soft); max-width:56ch; margin-top:14px;}
+
+  .divider{border:none; border-top:1px solid var(--line);}
+
+  /* ---- Options grid ---- */
+  .options{display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--line); border:1px solid var(--line); margin-top:8px;}
+  .option{background:var(--paper); padding:24px;}
+  .option-time{font-family:var(--mono); font-size:11px; letter-spacing:0.04em; text-transform:uppercase; margin-bottom:10px; display:inline-block; padding:3px 8px;}
+  .t-fast{color:var(--ember-dark); background:#F3E4DE;}
+  .t-mid{color:var(--wheat-dark); background:#F5EAD5;}
+  .t-slow{color:var(--grove-dark); background:#E4EBE3;}
+  .t-none{color:var(--harbor-soft); background:#E9ECE9;}
+  .option h3{font-family:var(--serif); font-weight:600; font-size:17px; margin-bottom:8px;}
+  .option p{font-size:14px; color:var(--harbor-soft);}
+  @media (max-width:600px){.options{grid-template-columns:1fr;}}
+
+  /* ---- About / founder note ---- */
+  .note{
+    background:var(--paper); border:1px solid var(--line); padding:32px;
+    margin-top:8px;
+  }
+  .note-quote{font-family:var(--serif); font-size:19px; line-height:1.55; color:var(--harbor); margin-bottom:20px;}
+  .note-sig{font-size:14px; color:var(--harbor-soft);}
+  .note-sig strong{color:var(--harbor); font-weight:600;}
+
+  /* ---- Process ---- */
+  .steps{margin-top:8px;}
+  .step{
+    display:flex; gap:20px; padding:20px 0; border-top:1px solid var(--line);
+  }
+  .step:last-child{border-bottom:1px solid var(--line);}
+  .step-mark{font-family:var(--mono); font-size:12px; color:var(--wheat-dark); padding-top:3px; min-width:24px;}
+  .step-body h3{font-family:var(--serif); font-weight:600; font-size:16px; margin-bottom:6px;}
+  .step-body p{font-size:14px; color:var(--harbor-soft); max-width:50ch;}
+
+  /* ---- Contact ---- */
+  .contact-card{
+    background:var(--harbor); color:var(--paper); padding:40px 32px;
+    margin-top:8px;
+  }
+  .contact-card h2{color:var(--paper);}
+  .contact-card .lede{color:#B9C4C0;}
+  .contact-methods{display:flex; flex-direction:column; gap:16px; margin-top:28px;}
+  .contact-method{
+    display:flex; align-items:center; justify-content:space-between;
+    padding:16px 0; border-top:1px solid rgba(247,249,247,0.14); text-decoration:none;
+  }
+  .contact-method:last-child{border-bottom:1px solid rgba(247,249,247,0.14);}
+  .cm-label{font-family:var(--mono); font-size:11px; letter-spacing:0.06em; text-transform:uppercase; color:#9AA8A3;}
+  .cm-value{font-family:var(--serif); font-size:19px; margin-top:4px;}
+  .cm-arrow{font-family:var(--mono); font-size:13px; color:var(--wheat);}
+
+  /* ---- Footer ---- */
+  footer{padding:36px 0 48px;}
+  .foot-row{
+    display:flex; justify-content:space-between; align-items:center; gap:16px;
+    font-size:13px; color:var(--harbor-soft); flex-wrap:wrap;
+  }
+  .foot-tag{font-family:var(--mono); font-size:11px; letter-spacing:0.04em;}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="brand">
+      <div class="brand-name">Seller First Homebuyers</div>
+      <div class="brand-tag">People First · Property Second</div>
+    </div>
+  </header>
+
+  <div class="hero">
+    <div class="eyebrow">Serving [City / Service Area]</div>
+    <h1>You have more options than the auction date.</h1>
+    <p class="hero-sub">I help homeowners facing auction, foreclosure, or a property they need to sell fast understand every path available — with no pressure and no obligation, whether or not we ever work together.</p>
+    <div class="cta-row">
+      <a class="btn btn-primary" href="tel:+15555555555">Call [Phone]</a>
+      <a class="btn btn-secondary" href="mailto:you@yourdomain.com">Email me</a>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-label">where most homeowners reach out</div>
+      <div class="timeline-track"><div class="timeline-fill"></div></div>
+      <div class="timeline-points">
+        <span>Notice received</span>
+        <span>Options narrow</span>
+        <span>Auction day</span>
+      </div>
+    </div>
+  </div>
+
+  <hr class="divider">
+
+  <section>
+    <div class="section-head">
+      <div class="section-eyebrow">If a date is on the calendar</div>
+      <h2>It's a lot to carry alone.</h2>
+      <p class="lede">Most homeowners we talk to didn't plan to be here. A job loss, a medical bill, an inherited property, a divorce — the reasons vary, but the feeling is usually the same: overwhelmed, and unsure what's actually still possible. That's the part I can help with first, before anything else.</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="section-head">
+      <div class="section-eyebrow">Your options</div>
+      <h2>What's actually on the table</h2>
+      <p class="lede">Every situation is different, and not every option fits every person. Here's the honest rundown — including the ones that don't involve selling to me at all.</p>
+    </div>
+    <div class="options">
+      <div class="option">
+        <span class="option-time t-fast">Fastest</span>
+        <h3>Sell before the date</h3>
+        <p>A direct, as-is sale that can close in as little as 10–21 days — often the most certain way to stop the process outright.</p>
+      </div>
+      <div class="option">
+        <span class="option-time t-mid">Needs funds</span>
+        <h3>Reinstate the loan</h3>
+        <p>Paying the past-due amount to bring the loan current, if the numbers and timing allow for it.</p>
+      </div>
+      <div class="option">
+        <span class="option-time t-slow">Takes longer</span>
+        <h3>Short sale</h3>
+        <p>Selling for less than what's owed with lender approval — slower, but can avoid foreclosure on record.</p>
+      </div>
+      <div class="option">
+        <span class="option-time t-none">No action</span>
+        <h3>Let it proceed</h3>
+        <p>Sometimes the right call for the moment. I'll never talk you out of this if it's genuinely where you land.</p>
+      </div>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="section-head">
+      <div class="section-eyebrow">About this company</div>
+      <h2>Why "people first"</h2>
+    </div>
+    <div class="note">
+      <p class="note-quote">"I started this company because I kept seeing the same thing: sellers making fast decisions under pressure, without anyone laying out what they were actually choosing between. My job is to fix that part first — the offer only matters if it's the right fit."</p>
+      <p class="note-sig"><strong>[Your Name]</strong> — Founder, Seller First Homebuyers</p>
+    </div>
+  </section>
+
+  <hr class="divider">
+
+  <section>
+    <div class="section-head">
+      <div class="section-eyebrow">How it works</div>
+      <h2>What happens if you reach out</h2>
+    </div>
+    <div class="steps">
+      <div class="step">
+        <span class="step-mark">01</span>
+        <div class="step-body">
+          <h3>A conversation, not a pitch</h3>
+          <p>We talk through your situation and timeline. No forms, no pressure — just clarity on where things stand.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-mark">02</span>
+        <div class="step-body">
+          <h3>Walk through every option</h3>
+          <p>Including the ones that don't involve me. You'll know what's realistic before you decide anything.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-mark">03</span>
+        <div class="step-body">
+          <h3>A no-obligation offer, if it fits</h3>
+          <p>If a direct sale makes sense for you, I'll walk you through the numbers plainly — no fine print surprises.</p>
+        </div>
+      </div>
+      <div class="step">
+        <span class="step-mark">04</span>
+        <div class="step-body">
+          <h3>Close on your timeline</h3>
+          <p>As fast as the date requires, or slower if there's room. You set the pace where possible.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="contact-card">
+      <div class="section-eyebrow" style="color:#9AA8A3;">Get in touch</div>
+      <h2>Talk it through, no obligation.</h2>
+      <p class="lede">Reach out any way that's easiest — I respond personally.</p>
+      <div class="contact-methods">
+        <a class="contact-method" href="tel:+15555555555">
+          <div>
+            <div class="cm-label">Call or text</div>
+            <div class="cm-value">[Phone]</div>
+          </div>
+          <span class="cm-arrow">→</span>
+        </a>
+        <a class="contact-method" href="mailto:you@yourdomain.com">
+          <div>
+            <div class="cm-label">Email</div>
+            <div class="cm-value">[you@yourdomain.com]</div>
+          </div>
+          <span class="cm-arrow">→</span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="foot-row">
+      <span>Seller First Homebuyers — People First, Property Second</span>
+      <span class="foot-tag">SERVING [SERVICE AREA]</span>
+    </div>
+  </footer>
+</div>
+
+</body>
+</html>
