@@ -34,7 +34,10 @@
     {"@type": "City", "name": "Orange Park, FL"},
     {"@type": "City", "name": "Fleming Island, FL"},
     {"@type": "City", "name": "Green Cove Springs, FL"},
-    {"@type": "City", "name": "Middleburg, FL"}
+    {"@type": "City", "name": "Middleburg, FL"},
+    {"@type": "City", "name": "Fernandina Beach, FL"},
+    {"@type": "City", "name": "Yulee, FL"},
+    {"@type": "City", "name": "Callahan, FL"}
   ],
   "slogan": "People First, Property Second"
 }
@@ -260,7 +263,7 @@
 <div class="band band-paper">
   <div class="wrap">
     <div class="hero">
-      <div class="eyebrow">Serving Jacksonville, St. Augustine, Orange Park &amp; Clay County</div>
+      <div class="eyebrow">Serving Jacksonville, St. Augustine, Orange Park &amp; Nassau County</div>
       <h1>You have more options than the auction date.</h1>
       <p class="hero-sub">I help homeowners facing auction, foreclosure, or a property they need to sell fast understand every path available — with no pressure and no obligation, whether or not we ever work together.</p>
       <div class="cta-row">
@@ -419,8 +422,12 @@
             </div>
             <div class="form-field">
               <label for="f-phone">Phone</label>
-              <input id="f-phone" type="tel" name="Phone" required>
+              <input id="f-phone" type="tel" name="Phone" inputmode="numeric" maxlength="14" placeholder="(904) 555-0123" required>
             </div>
+          </div>
+          <div class="form-field">
+            <label for="f-address">Property Address</label>
+            <input id="f-address" type="text" name="Property Address" placeholder="123 Main St, Jacksonville, FL 32211" required>
           </div>
           <div class="form-field">
             <label for="f-situation">What's going on with your property?</label>
@@ -438,11 +445,30 @@
     <footer>
       <div class="foot-row">
         <span>Seller First Homebuyers — People First, Property Second</span>
-        <span class="foot-tag">SERVING JACKSONVILLE · ST. AUGUSTINE · ORANGE PARK · CLAY COUNTY</span>
+        <span class="foot-tag">SERVING JACKSONVILLE · ST. AUGUSTINE · ORANGE PARK · CLAY &amp; NASSAU COUNTIES</span>
       </div>
     </footer>
   </div>
 </div>
+
+<script>
+  (function(){
+    var phoneInput = document.getElementById('f-phone');
+    if (!phoneInput) return;
+    phoneInput.addEventListener('input', function(e){
+      var digits = e.target.value.replace(/\D/g, '').slice(0, 10);
+      var formatted = digits;
+      if (digits.length > 6) {
+        formatted = '(' + digits.slice(0,3) + ') ' + digits.slice(3,6) + '-' + digits.slice(6);
+      } else if (digits.length > 3) {
+        formatted = '(' + digits.slice(0,3) + ') ' + digits.slice(3);
+      } else if (digits.length > 0) {
+        formatted = '(' + digits;
+      }
+      e.target.value = formatted;
+    });
+  })();
+</script>
 
 </body>
 </html>
