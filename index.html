@@ -5,6 +5,41 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Seller First Homebuyers — People First, Property Second</title>
 <meta name="description" content="A local, family-run home buying company. We help homeowners facing auction, foreclosure, or a hard sale understand every option available to them — no pressure, no obligation.">
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-E2PJ3B9ZSP"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-E2PJ3B9ZSP');
+</script>
+
+<!-- LocalBusiness structured data for SEO -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Seller First Homebuyers",
+  "description": "Local, family-run home buying company helping homeowners facing auction, foreclosure, or a hard sale understand every option available to them.",
+  "telephone": "+19044388032",
+  "email": "nicole@sellerfirsthomebuyers.com",
+  "founder": {
+    "@type": "Person",
+    "name": "Nicole Rice"
+  },
+  "areaServed": [
+    {"@type": "City", "name": "Jacksonville, FL"},
+    {"@type": "City", "name": "St. Augustine, FL"},
+    {"@type": "City", "name": "Orange Park, FL"},
+    {"@type": "City", "name": "Fleming Island, FL"},
+    {"@type": "City", "name": "Green Cove Springs, FL"},
+    {"@type": "City", "name": "Middleburg, FL"}
+  ],
+  "slogan": "People First, Property Second"
+}
+</script>
+
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
@@ -56,6 +91,18 @@
   .brand-mark{flex-shrink:0; display:flex; align-items:center;}
   .brand-name{font-family:var(--serif); font-weight:600; font-size:24px; letter-spacing:0.01em;}
   .brand-tag{font-family:var(--label); font-weight:500; font-size:13px; letter-spacing:0.09em; text-transform:uppercase; color:var(--harbor-soft); margin-top:4px;}
+
+  .site-nav{
+    display:flex; gap:26px; padding:14px 0; overflow-x:auto;
+    -webkit-overflow-scrolling:touch; scrollbar-width:none;
+  }
+  .site-nav::-webkit-scrollbar{display:none;}
+  .site-nav a{
+    font-family:var(--label); font-weight:500; font-size:14px;
+    color:var(--harbor-soft); text-decoration:none; white-space:nowrap;
+    padding:4px 0; border-bottom:2px solid transparent; transition:color 0.15s ease, border-color 0.15s ease;
+  }
+  .site-nav a:hover{color:var(--harbor); border-bottom-color:var(--ember);}
 
   /* ---- Hero ---- */
   .hero{padding:76px 0 48px;}
@@ -156,6 +203,29 @@
   .cm-value{font-family:var(--serif); font-size:21px; margin-top:5px;}
   .cm-arrow{font-family:var(--mono); font-size:14px; color:var(--wheat);}
 
+  /* ---- Lead form ---- */
+  .lead-form{margin-top:32px; padding-top:32px; border-top:1px solid rgba(247,249,247,0.14);}
+  .form-row{display:flex; gap:16px; flex-wrap:wrap;}
+  .form-field{flex:1 1 200px; margin-bottom:18px; display:flex; flex-direction:column;}
+  .form-field label{
+    font-family:var(--label); font-weight:600; font-size:12.5px; letter-spacing:0.08em;
+    text-transform:uppercase; color:#9AA8A3; margin-bottom:8px;
+  }
+  .form-field input, .form-field textarea{
+    font-family:var(--sans); font-size:16px; color:var(--paper);
+    background:rgba(247,249,247,0.06); border:1px solid rgba(247,249,247,0.24);
+    border-radius:2px; padding:12px 14px; resize:vertical;
+  }
+  .form-field input:focus, .form-field textarea:focus{
+    outline:none; border-color:var(--wheat);
+  }
+  .form-field input::placeholder, .form-field textarea::placeholder{color:#8A958F;}
+  .btn-form{
+    background:var(--wheat); color:var(--harbor); border:none; cursor:pointer;
+    font-size:16px; margin-top:4px;
+  }
+  .btn-form:hover{transform:translateY(-1px);}
+
   /* ---- Footer ---- */
   footer{padding:40px 0 52px;}
   .foot-row{
@@ -177,6 +247,12 @@
           <div class="brand-tag">People First · Property Second</div>
         </div>
       </div>
+      <nav class="site-nav">
+        <a href="#options">Your Options</a>
+        <a href="#about">About</a>
+        <a href="#process">How It Works</a>
+        <a href="#contact">Contact</a>
+      </nav>
     </header>
   </div>
 </div>
@@ -184,7 +260,7 @@
 <div class="band band-paper">
   <div class="wrap">
     <div class="hero">
-      <div class="eyebrow">Serving Northeast Florida</div>
+      <div class="eyebrow">Serving Jacksonville, St. Augustine, Orange Park &amp; Clay County</div>
       <h1>You have more options than the auction date.</h1>
       <p class="hero-sub">I help homeowners facing auction, foreclosure, or a property they need to sell fast understand every path available — with no pressure and no obligation, whether or not we ever work together.</p>
       <div class="cta-row">
@@ -220,7 +296,7 @@
 
 <div class="band band-paper">
   <div class="wrap">
-    <section>
+    <section id="options">
       <div class="section-head">
         <div class="section-eyebrow">Your options</div>
         <h2>What's actually on the table</h2>
@@ -254,7 +330,7 @@
 
 <div class="band band-sage">
   <div class="wrap">
-    <section>
+    <section id="about">
       <div class="section-head">
         <div class="section-eyebrow">About this company</div>
         <h2>Why "people first"</h2>
@@ -269,7 +345,7 @@
 
 <div class="band band-paper">
   <div class="wrap">
-    <section>
+    <section id="process">
       <div class="section-head">
         <div class="section-eyebrow">How it works</div>
         <h2>What happens if you reach out</h2>
@@ -310,7 +386,7 @@
 
 <div class="band band-dark">
   <div class="wrap">
-    <section>
+    <section id="contact">
       <div class="contact-card">
         <div class="section-eyebrow" style="color:#9AA8A3;">Get in touch</div>
         <h2>Talk it through, no obligation.</h2>
@@ -331,6 +407,27 @@
             <span class="cm-arrow">→</span>
           </a>
         </div>
+
+        <form class="lead-form" action="https://formsubmit.co/nicole@sellerfirsthomebuyers.com" method="POST">
+          <input type="hidden" name="_subject" value="New lead from Seller First Homebuyers website">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <div class="form-row">
+            <div class="form-field">
+              <label for="f-name">Name</label>
+              <input id="f-name" type="text" name="Name" required>
+            </div>
+            <div class="form-field">
+              <label for="f-phone">Phone</label>
+              <input id="f-phone" type="tel" name="Phone" required>
+            </div>
+          </div>
+          <div class="form-field">
+            <label for="f-situation">What's going on with your property?</label>
+            <textarea id="f-situation" name="Situation" rows="4" placeholder="Auction date, foreclosure notice, repairs needed, timeline — whatever's relevant."></textarea>
+          </div>
+          <button type="submit" class="btn btn-form">Send — no obligation</button>
+        </form>
       </div>
     </section>
   </div>
@@ -341,7 +438,7 @@
     <footer>
       <div class="foot-row">
         <span>Seller First Homebuyers — People First, Property Second</span>
-        <span class="foot-tag">SERVING NORTHEAST FLORIDA</span>
+        <span class="foot-tag">SERVING JACKSONVILLE · ST. AUGUSTINE · ORANGE PARK · CLAY COUNTY</span>
       </div>
     </footer>
   </div>
